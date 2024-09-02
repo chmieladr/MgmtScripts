@@ -1,0 +1,20 @@
+#!/bin/sh
+# Script by Adrian Chmiel (chmieladr)
+
+# Overcomplicated script to capture DHCP traffic
+# and print exactly 4 different characteristic packets
+# Requirements: WireShark (tshark)
+
+# Define the interface
+interface="eth1"
+
+# Temporarily turn off the interface
+sudo ip link set dev $interface down
+
+# Start capturing the traffic and turn back the interface
+sudo tshark -i $interface -f "udp port 67 or tcp port 68" -c 10 > dhcp_pcap 2> /dev/null &
+sudo ip link set dev $interface up
+sudo dhcpcd $interface -1 2> /dev/null
+
+# Print the precisely formatted packets
+cat dhcp_pcap | grep 'DHCP' | sort -k13,13 -k10,10 -u | awk '{count[$13]++} END {for (id in count) if (count[id] == 4) print id}' | xargs -I {} grep {} dhcp_pcap | sort -k10,10 -u | sort -k1

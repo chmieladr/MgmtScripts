@@ -1,0 +1,24 @@
+#!/bin/bash
+# Script by Adrian Chmiel (chmieladr)
+
+# Refresh repositories
+sudo zypper refresh
+
+# Upgrade distribution based only on official repositories (some might be invalid)
+sudo zypper dist-upgrade --from openSUSE:repo-oss --from openSUSE:repo-non-oss --from repo-update --from repo-update-non-oss --from openSUSE:update-oss --from openSUSE:update-sle --from openSUSE:update-backports --no-allow-vendor-change --auto-agree-with-licenses -y
+
+# Update all of the other packages
+sudo zypper update -y
+
+# Repositories-based update confirmation message
+if [ !#? ] ; then
+	echo "System and its repositories have been successfully refreshed and updated!"
+fi
+
+# Flatpak updates
+sudo flatpak update -y
+
+# Flatpak-based update confirmation message
+if [ !#? ] ; then
+	echo "Flatpak packages have been successfully updated!"
+fi

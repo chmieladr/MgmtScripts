@@ -1,0 +1,11 @@
+#!/bin/sh
+# Script by Adrian Chmiel (chmieladr)
+
+# Add the config if it doesn't exist
+if ! grep -q 'export PATH="$PATH:$HOME/OneDrive/bin"' ~/.zshrc; then
+    echo 'export PATH="$PATH:$HOME/OneDrive/bin"' >> ~/.zshrc
+    source ~/.zshrc
+fi
+
+# Confirmation message
+echo "OneDrive link has been successfully added to the \$PATH environmental variable!"

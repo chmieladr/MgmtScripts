@@ -1,0 +1,20 @@
+#!/bin/sh
+# Script by Adrian Chmiel (chmieladr)
+
+# Requirements: VirtualBox
+# Adjusted for ArchLinux
+# Run once!
+
+# Install the necessary packages
+sudo pacman -Sy virtualbox --noconfirm --noprogressbar
+sudo pacman -Sy linux-headers base-devel bridge-utils --noconfirm --noprogressbar
+
+# Load the kernel module
+sudo modprobe vboxdrv
+
+# Reload the current terminal session
+source ~./zshrc
+
+# Confirmation message
+echo "VirtualBox has been successfully installed and the kernel module has been loaded!"
+lsmod | grep vboxdrv

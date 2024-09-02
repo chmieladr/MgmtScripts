@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# Script by Adrian Chmiel (chmieladr)
+# Based on the following thread:
+# https://www.reddit.com/r/linux_gaming/comments/or1g40/changing_mouse_debounce_time_on_arch_linux/
+
+# Run once!
+
+# Create the necessary config file
+sudo mkdir -p /etc/libinput
+QUIRKS="/etc/libinput/local-overrides.quirks"
+sudo echo "[Never Debounce]" >>$QUIRKS
+sudo echo "MatchUdevType=mouse" >>$QUIRKS
+sudo echo "ModelBouncingKeys=1" >>$QUIRKS
+
+# Confirmation message
+echo "Debounce successfully modified! Restart the system to take effect!"

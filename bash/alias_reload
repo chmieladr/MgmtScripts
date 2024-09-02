@@ -1,0 +1,15 @@
+#!/bin/bash
+# Script by Adrian Chmiel (chmieladr)
+# Run once!
+
+# Add the config
+SRC=~/.bashrc
+echo "" >>$SRC
+echo "# Alias for reloading the current terminal session" >>$SRC
+echo "alias reload='source ~/.bashrc'" >>$SRC
+
+# Reload the current terminal session
+source ~/.bashrc
+
+# Confirmation message
+echo "Reload alias has been successfully added!"

@@ -1,0 +1,12 @@
+#!/bin/sh
+# Script by Adrian Chmiel (chmieladr)
+
+# Get the interfaces
+interfaces=$(ip -o link show | awk -F': ' '{print $2}')
+
+# Loop through the interfaces and display their data
+for interface in $interfaces; do
+    ip -br a | grep $interface
+    sudo ethtool $interface | grep "Speed"
+    echo ""
+done

@@ -1,0 +1,25 @@
+#!/bin/sh
+# Script by Adrian Chmiel (chmieladr)
+
+# This script creates a low-resource non-GUI VM booting from the network
+# that are connected to the VLAN network
+# Requirements: VirtualBox
+
+# Variables
+VM_NAME=$1
+VM_BASE_FOLDER="$HOME/vm"
+VM_FOLDER="${VM_BASE_FOLDER}/${VM_NAME}"
+
+# Create a folder for the VM (if it doesn't exist)
+mkdir -p "$VM_BASE_FOLDER"
+
+# Configurating and creating the VM
+VBoxManage createvm --name "$VM_NAME" --ostype "Linux26_64" --register --basefolder "$VM_FOLDER"
+VBoxManage modifyvm "$VM_NAME" --memory 768 --vram 32 --ioapic on --acpi on --cpus 2
+VBoxManage modifyvm "$VM_NAME" --nic1 bridged --bridgeadapter1 eth0
+VBoxManage modifyvm "$VM_NAME" --boot1 net
+VBoxManage modifyvm "$VM_NAME" --nic2 intnet --intnet2 "VLAN"
+VBoxManage startvm "$VM_NAME" --type headless
+
+# Confirmation message
+echo "Machine $1 has been successfully created and started!"

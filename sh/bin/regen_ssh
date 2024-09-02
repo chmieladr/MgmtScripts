@@ -1,0 +1,14 @@
+#!/bin/sh
+# Script by Adrian Chmiel (chmieladr)
+
+# Remove all the exiting keys
+sudo rm /etc/ssh/ssh_host_*
+
+# Regenerate all the keys
+sudo ssh-keygen -A
+
+# Restart the SSH service
+sudo systemctl restart sshd
+
+# Confirmation message
+echo "All SSH keys have been successfully regenerated!"

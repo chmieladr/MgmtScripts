@@ -1,0 +1,34 @@
+#!/bin/sh
+# Script by Adrian Chmiel (chmieladr)
+# Adds or removes an IPv4 address to defined interface
+
+# Define the interface here
+interface="eth1"
+
+# Print the usage message if the number of arguments is not equal to 3
+if [ ! "$#" -eq 3 ]; then
+    echo "Usage: $0 <ipv4> <mask> <mode>"
+    echo "<mode: a -> adds an address, d -> removes an address>"
+    exit
+fi
+
+# Print the initial state of the network interfaces
+echo "Initial state:"
+ip -br a
+
+# Add the address if the mode is 'a'
+if [ "$3" = "a" ]; then
+     sudo ip addr add $1/$2 dev $interface
+     echo "Added $1/$2 to $interface!"
+     ping -c 1 $1
+fi
+
+# Delete the address if the mode is 'd'
+if [ "$3" = "d" ]; then
+     sudo ip addr del $1/$2 dev $interface
+     echo "Deleted $1/$2 from $interface!"
+fi
+
+# Print the final state of the network interfaces
+echo "Final state:"
+ip -br a

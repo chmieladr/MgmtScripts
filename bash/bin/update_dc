@@ -1,0 +1,35 @@
+#!/bin/bash
+# Script by Adrian Chmiel (chmieladr)
+
+# Determine the directory (either default Downloads or other provided by user)
+if [ $# -eq 0 ] ; then
+	DOWNLOAD_DIR=~/Downloads
+elif [ $# -eq 1 ] ; then
+	DOWNLOAD_DIR=$1
+else
+	echo "Too many arguments!"
+	exit 1
+fi
+
+# Discord .tar.gz file detection
+DISCORD_TAR=$(ls $DOWNLOAD_DIR/discord-*.tar.gz 2>/dev/null)
+if [ -z "$DISCORD_TAR" ]; then
+	echo "No Discord .tar.gz file found in $DOWNLOAD_DIR"
+	exit 2
+fi
+
+# Update
+sudo tar -xzf $DISCORD_TAR -C /opt
+if [ $? ] ; then
+	echo "Couldn't process the provided .tar.gz"
+	exit 3
+fi
+
+# Remove the file after successful installation to save space
+rm $DISCORD_TAR
+
+# Refreshing Desktop database
+sudo update-desktop-database
+
+# Confirmation message
+echo "Discord has been successfully updated! ($DISCORD_TAR)"
