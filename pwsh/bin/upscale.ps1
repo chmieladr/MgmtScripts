@@ -17,7 +17,7 @@ foreach ($input_file in $args) {
     $output_file = Join-Path "upscaled" (Split-Path $input_file -Leaf)
 
     # Upscale the video to 3840x2160 resolution using the NVIDIA NVENC encoder
-    ffmpeg -i $input_file -vf scale=3840:2160:flags=neighbor -c:v h264_nvenc -profile:v high -preset slow -rc vbr -qmin 17 -qmax 22 -multipass 2 -b:v 0 -c:a copy -b:a $output_file
+    ffmpeg -i "$input_file" -vf scale=3840:2160:flags=neighbor -c:v h264_nvenc -profile:v high -preset slow -rc vbr -qmin 17 -qmax 22 -multipass 2 -b:v 0 -c:a copy "$output_file"
 
     # Confirmation message
     if ($LASTEXITCODE -eq 0) {
