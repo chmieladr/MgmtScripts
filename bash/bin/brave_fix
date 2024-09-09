@@ -1,0 +1,12 @@
+#!/bin/bash
+# Script by Adrian Chmiel (chmieladr)
+# Fixes Brave browser when it's unable to launch
+
+# Locate Brave files
+cd ~/.config/BraveSoftware/Brave-Browser
+
+# Remove the files locking the profile
+rm -f "SingletonLock" "SingletonSocket" "SingletonCookie" "Default/LOCK"
+
+# Confirmation message
+echo "Brave profile successfully unlocked!"
