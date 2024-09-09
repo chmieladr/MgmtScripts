@@ -1,0 +1,15 @@
+#!/bin/bash
+# Script made by Adrian Chmiel (chmieladr)
+
+# Launches all the links provided in 'links.txt' file
+# Replace the links in the file provided as an example with your own ones!
+# 'links.txt' file needs to be in the same directory as the script!
+
+# Read the links from the file and open each one
+while IFS= read -r link; do
+    xdg-open "$link"
+    echo "Launching $link"
+done < links.txt
+
+# Confirmation message
+echo "All links have been opened!"
