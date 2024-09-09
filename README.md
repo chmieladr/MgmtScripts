@@ -15,4 +15,4 @@ Every subfolder has the following structure:
 └── script4
 ```
 
-The scripts in `bin` directory are supposed to be placed in one of the directories that appear in your `$PATH` environmental variable. Other scripts are usually supposed to be used just once.
+The scripts in `bin` directory are supposed to be placed in one of the directories that appear in your `$PATH` environmental variable. Other scripts are usually meant to be used just once.
