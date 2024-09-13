@@ -11,7 +11,7 @@ PowerShell normally doesn't allow you to run scripts downloaded from the Interne
 ```pwsh
 Set-ExecutionPolicy Unrestricted -Scope Process -Force
 ```
-After that you can use `pwsh/unblock.ps1` script to unblock all the scripts available in this repository in order to reduce the amount of received prompts!
+After that you can use `pwsh/UnblockAll.ps1` script to unblock all the scripts available in this repository in order to reduce the amount of received prompts!
 
 ### Structure
 Every subfolder has the following structure:
