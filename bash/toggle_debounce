@@ -15,3 +15,4 @@ sudo echo "ModelBouncingKeys=1" >>$QUIRKS
 
 # Confirmation message
 echo "Debounce successfully modified! Restart the system to take effect!"
+echo "(sudo reboot)"

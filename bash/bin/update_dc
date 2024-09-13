@@ -5,12 +5,22 @@
 
 # Determine the directory (either default Downloads or other provided by user)
 if [ $# -eq 0 ] ; then
+	# Use default '~/Downloads' directory
 	DOWNLOAD_DIR=~/Downloads
 elif [ $# -eq 1 ] ; then
+	# Show help message
+    if [[ "$1" == "-?" || "$1" == "-h" ]]; then
+        echo "Usage: $0 [file]"
+        echo "If no file is provided, the script will look in '~/Downloads' directory."
+        echo "Additional arguments will be ignored."
+        exit 0
+    fi
+
 	DOWNLOAD_DIR=$1
 else
-	echo "Too many arguments!"
-	exit 1
+	# Ignore additional arguments
+	DOWNLOAD_DIR=$1
+    echo "More than one argument provided! Using the first one: $1"
 fi
 
 # Discord .tar.gz file detection

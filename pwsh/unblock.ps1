@@ -6,9 +6,6 @@
 # Do not use outside of this directory!
 # (might potentially unblock other unsafe files on your computer)
 
-# Change execution policy
-Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
-
 # Get the list of all files
 $files = Get-ChildItem -File -Recurse
 

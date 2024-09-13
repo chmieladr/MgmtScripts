@@ -1,6 +1,10 @@
 #!/bin/bash
 # Script by Adrian Chmiel (chmieladr)
 
+# This script is mainly adjusted to openSUSE Leap distro and assumes that:
+# - you mainly use the Zypper package manager
+# - you have the Flatpak package manager installed
+
 # Refresh repositories
 sudo zypper refresh
 
@@ -11,9 +15,7 @@ sudo zypper dist-upgrade --from openSUSE:repo-oss --from openSUSE:repo-non-oss -
 sudo zypper update -y
 
 # Repositories-based update confirmation message
-if [ !#? ] ; then
-	echo "System and its repositories have been successfully refreshed and updated!"
-fi
+echo "System and its repositories have been refreshed and updated!"
 
 # Flatpak updates
 sudo flatpak update -y
