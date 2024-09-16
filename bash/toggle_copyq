@@ -13,11 +13,5 @@ flatpak install flathub com.github.hluk.copyq
 # Run CopyQ
 flatpak run com.github.hluk.copyq &
 
-# Add an entry to .bashrc to run CopyQ on startup
-SRC=~/.bashrc
-echo "" >>$SRC
-echo "# Start CopyQ clipboard manager" >>$SRC
-echo "flatpak run com.github.hluk.copyq" >>$SRC
-
 # Confirmation message
-echo "Clipboard manager has been successfully replaced wtih CopyQ!"
+echo "CopyQ has been successfully installed and launched!"
