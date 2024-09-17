@@ -4,14 +4,19 @@ My collection of simple system management scripts for particular shells. Current
 * `/bin/sh`
 * PowerShell
 
-> **Note!** Use these scripts at your own risk! Feel free to adjust them to your needs and remember it isn't always the best idea to run the script without fully understanding it first! All of these scripts have been tested by me, however they might look differently in your environment!
+> **Note!** Use these scripts at your own risk! Feel free to adjust them to your needs and remember it isn't always the best idea to run the script without fully understanding it first! All of these scripts have been tested by me, however they might work with some differences in your environment!
+
+### My testing environment
+* Linux openSUSE Leap 15.6 (`/bin/bash`)
+* ArchLinux (`/bin/sh`)
+* Microsoft Windows 11 23H2 with **PowerShell** 7.4.5
 
 ### PowerShell execution policy
 PowerShell normally doesn't allow you to run scripts downloaded from the Internet to protect you from malicious actions! Before executing any of the scripts you'll have to change the execution policy for your current PowerShell process using the following command:
 ```pwsh
 Set-ExecutionPolicy Unrestricted -Scope Process -Force
 ```
-After that you can use `pwsh/UnblockAll.ps1` script to unblock all the scripts available in this repository in order to reduce the amount of received prompts!
+After that you can use `pwsh/UnblockAll.ps1` script to unblock all the scripts available in this repository in order to reduce the amount of received prompts! (however, this step is fully optional)
 
 ### Structure
 Every subfolder has the following structure:
