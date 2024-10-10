@@ -9,9 +9,10 @@
 # Create the necessary config file
 sudo mkdir -p /etc/libinput
 QUIRKS="/etc/libinput/local-overrides.quirks"
-sudo echo "[Never Debounce]" >>$QUIRKS
-sudo echo "MatchUdevType=mouse" >>$QUIRKS
-sudo echo "ModelBouncingKeys=1" >>$QUIRKS
+sudo touch $QUIRKS
+echo "[Never Debounce]" | sudo tee -a $QUIRKS > /dev/null
+echo "MatchUdevType=mouse" | sudo tee -a $QUIRKS > /dev/null
+echo "ModelBouncingKeys=1" | sudo tee -a $QUIRKS > /dev/null
 
 # Confirmation message
 echo "Debounce successfully modified! Restart the system to take effect!"
