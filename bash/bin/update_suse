@@ -24,3 +24,11 @@ sudo flatpak update -y
 if [ !#? ] ; then
 	echo "Flatpak packages have been successfully updated!"
 fi
+
+# Snap updates
+sudo snap refresh
+
+# Snap-based update confirmation message
+if [ !#? ] ; then
+	echo "Snap packages have been successfully refreshed!"
+fi
