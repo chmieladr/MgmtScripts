@@ -1,0 +1,10 @@
+#!/bin/bash
+# Script by Adrian Chmiel (chmieladr)
+# Fixes issues with NAT in VMware Workstation
+# by rebuilding the modules and restarting the service
+
+# Rebuild the modules
+sudo vmware-modconfig --console --install-all
+
+# Restart the service
+sudo systemctl restart vmware.service
