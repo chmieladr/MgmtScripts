@@ -19,6 +19,8 @@ echo "System and its repositories have been refreshed and updated!"
 
 # Flatpak updates
 sudo flatpak update -y
+# Seperately force update of system runtimes
+sudo flatpak update --subpath=/runtime -y
 
 # Flatpak-based update confirmation message
 if [ !#? ] ; then
