@@ -1,0 +1,12 @@
+#!/bin/bash
+# Script by Adrian Chmiel (chmieladr)
+# Run once!
+
+# Add the config
+PROF=~/.profile
+echo "" >>$PROF
+echo "# Flatpak applications search fix" >>$PROF
+echo "export XDG_DATA_DIRS='$XDG_DATA_DIRS:/var/lib/flatpak/exports/share'" >>$PROF
+
+# Confirmation message
+echo "Search path has been updated and it should support Flatpak applications after relogging!"
