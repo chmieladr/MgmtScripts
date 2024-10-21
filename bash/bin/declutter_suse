@@ -1,0 +1,122 @@
+#!/bin/bash
+# Script made by Adrian Chmiel (chmieladr)
+# Used to software delivered with clear openSUSE installation using KDE Plasma
+
+# Character mappings to programs (feel free to adjust this list to your needs)
+declare -A programs=(
+    ["a"]="akregator"
+    ["b"]="geoclue2"
+    ["c"]="kaddressbook"
+    ["d"]="kalendarac"
+    ["e"]="kcharselect"
+    ["f"]="kmail"
+    ["g"]="kmahjongg"
+    ["h"]="kmines"
+    ["i"]="kmousetool"
+    ["j"]="knotes"
+    ["k"]="kontact"
+    ["l"]="konversation"
+    ["m"]="korganizer"
+    ["n"]="kpat"
+    ["o"]="kreversi"
+    ["p"]="ksudoku"
+    ["q"]="ktnef"
+    ["r"]="MozillaFirefox-branding-openSUSE"
+    ["s"]="skanlite"
+    ["t"]="tigervnc"
+)
+
+# Character mappings to user-friendly program names (make sure this list is in sync with the programs list)
+declare -A program_names=(
+    ["a"]="Akregator"
+    ["b"]="Geoclue2"
+    ["c"]="KAddressBook"
+    ["d"]="Kalendarac"
+    ["e"]="KCharSelect"
+    ["f"]="KMail"
+    ["g"]="KMahjongg"
+    ["h"]="KMines"
+    ["i"]="KMouseTool"
+    ["j"]="KNotes"
+    ["k"]="Kontact"
+    ["l"]="Konversation"
+    ["m"]="KOrganizer"
+    ["n"]="KPatience"
+    ["o"]="KReversi"
+    ["p"]="KSudoku"
+    ["q"]="KTNEF"
+    ["r"]="Mozilla Firefox"
+    ["s"]="Skanlite"
+    ["t"]="TigerVNC"
+)
+
+list() {
+    echo "List of available programs:"
+    for key in "${!program_names[@]}"; do
+        echo "$key - ${program_names[$key]}"
+    done
+}
+
+# Print usage if no argument is provided
+if [ -z "$1" ]; then
+    echo "Please provide program selection."
+    echo "Usage: $0 <programs>"
+    echo ""
+    echo "Example:"
+    echo "$0 b"
+    echo "Removes only ${program_names[b]}"
+    echo ""
+    echo "$0 abec"
+    echo "Removes ${program_names[a]}, ${program_names[b]}, ${program_names[e]} and ${program_names[c]} in one go"
+    echo
+    echo "$0 *"
+    echo "Removes all programs listed below"
+    echo ""
+    list
+    exit 1
+fi
+
+# Function to check if a package is installed
+is_installed() {
+    rpm -q $1 &> /dev/null
+    return $?
+}
+
+# Remove all programs if "+" is provided
+if [ "$1" == "+" ]; then
+    echo "Removing all programs..."
+    all_programs=""
+    for key in "${!programs[@]}"; do
+        program="${programs[$key]}"
+        if is_installed $program; then
+            all_programs+="$program "
+        else
+            echo "Program ${program_names[$key]} is not installed."
+        fi
+    done
+
+    if [ -n "$all_programs" ]; then
+        sudo zypper remove -y $all_programs
+    else
+        echo "No programs to remove."
+    fi
+    exit 0
+fi
+
+# Parse the input and remove the corresponding programs
+for char in $(echo "$1" | fold -w1); do
+    if [[ -n "${programs[$char]}" ]]; then
+        if is_installed "${programs[$char]}"; then
+            sudo zypper remove -y "${programs[$char]}"
+        else
+            echo "Program ${programs[$char]} is not installed."
+        fi
+    else
+        echo "$char: There is no program assigned to this key"
+    fi
+done
+
+# Confirmation message
+echo ""
+echo "Your system has been decluttered!"
+echo ""

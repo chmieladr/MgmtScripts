@@ -1,7 +1,0 @@
-#!/bin/bash
-# Script made by Adrian Chmiel (chmieladr)
-# Removes unneeded software delivered with clear openSUSE installation with KDE Plasma
-# Run once!
-
-# Feel free to adjust the list to your needs
-sudo zypper remove kcharselect akregator kmail kaddressbook korganizer knotes ktnef tigervnc konversation skanlite kmousetool kpat kmahjongg kreversi ksudoku kmines kontact kalendarac geoclue2
