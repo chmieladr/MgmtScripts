@@ -1,4 +1,4 @@
-# Script made by ~
+# Script made by Adrian Chmiel (chmieladr)
 # Features a couple tweaks restoring Windows 10 features on Windows 11
 # using only the registry (no third-party tools required)
 
@@ -162,7 +162,7 @@ function CreateHiddenTrayIconsMenuShortcut {
 function Introduction {
     Write-Host ""
     Write-Host "Win10ify - Script that restores Windows 10 features"
-    Write-Host "Made by ~"
+    Write-Host "Made by Adrian Chmiel (chmieladr)"
     Write-Host ""
     Write-Host "Usage: Win10ify.ps1 [options]"
     Write-Host ""

@@ -30,3 +30,25 @@ Every subfolder has the following structure:
 ```
 
 The scripts in `bin` directory are supposed to be placed in one of the directories that appear in your `$PATH` environmental variable. Other scripts are usually meant to be used just once.
+
+## Example scripts
+This section quickly summarises the most outstanding scripts existent within this project that offer the most interesting (or stupidly funny) functionalities.
+
+#### declutter_suse _(openSUSE /bin/bash)_
+* advanced customizable uninstaller script that lets you easily get rid of unnecessary preinstalled software
+* allows you to select which programs exactly you want to erase from your installation
+
+#### GodlyShortcuts _(PowerShell for Windows)_
+* script that creates shortcuts for (usually) hidden or difficult to access menus inside of Windows 11 that might come in handy for more advanced users
+* includes "God Mode", all applications and more
+
+#### Win10ify _(PowerShell for Windows)_
+* script that reverts some Windows 11 changes to their Windows 10 versions
+* includes old context menu and old taskbar
+
+#### WinDebloat _(PowerShell for Windows)_
+* work in progress
+
+#### zdhcp _(Linux /bin/sh)_
+* overcomplicated script to showcase exactly all 4 different DHCP packets
+* just have a look at it and be surprised that it actually works...
