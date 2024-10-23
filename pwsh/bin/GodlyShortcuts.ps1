@@ -10,14 +10,14 @@ function Create-Shortcut {
     param (
         [string]$path,
         [string]$target,
-        [string]$arguments,
+        [string]$arguments = "",
         [string]$name = "New", 
         [string]$workingDirectory = "C:\Windows\System32"
     )
 
     # Check if the shortcut already exists
     if (Test-Path $path) {
-        Write-Host "$path: Shortcut already exists!"
+        Write-Host "$path -> Shortcut already exists!"
         return
     }
 
@@ -45,7 +45,7 @@ function Shortcut-AllApps {
 }
 
 function Shortcut-AdvancedGraphics {
-    Create-Shortcut -path "ms-settings:display-advancedgraphics" -name "Advanced Graphics"
+    Create-Shortcut -path "$desktop\Advanced Graphics Settings.lnk" -target "ms-settings:display-advancedgraphics" -name "Advanced Graphics"
 }
 
 function Create-AllShortcuts {
