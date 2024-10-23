@@ -1,5 +1,5 @@
 #!/usr/bin/pwsh
-# Script made by Adrian Chmiel (chmieladr)
+# Script made by Adrian Chmiel (https://github.com/chmieladr)
 
 # Launches all the links provided in 'links.txt' file
 # Replace the links in the file provided as an example with your own ones!

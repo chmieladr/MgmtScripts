@@ -1,5 +1,5 @@
 #!/bin/sh
-# Script by Adrian Chmiel (chmieladr)
+# Script by Adrian Chmiel (https://github.com/chmieladr)
 
 # This script creates a low-resource non-GUI VM booting from the network
 # that are connected to the VLAN network

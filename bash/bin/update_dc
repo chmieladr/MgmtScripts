@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script by Adrian Chmiel (chmieladr)
+# Script by Adrian Chmiel (https://github.com/chmieladr)
 # Performs an automatic update based on the provided .tar.gz file
 # Discord needs to be installed in /opt directory!
 

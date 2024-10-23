@@ -1,10 +1,14 @@
-# Script made by Adrian Chmiel (chmieladr)
+# Script made by Adrian Chmiel (https://github.com/chmieladr)
+
 # Lets you easily create shortcuts to either hidden
 # or unnecessarily difficult to access Windows features.
 
 # Desktop path
 $desktop = "$env:USERPROFILE\Desktop"
+
+# Shell keys
 $godModeShellKey = "shell:::{ED7BA470-8E54-465E-825C-99712043E01C}"
+$trayIconsShellKey = "shell:::{05d7b0f4-2121-4eff-bf6b-ed3f69b894d9}"
 
 function Create-Shortcut {
     param (
@@ -49,7 +53,7 @@ function Shortcut-AdvancedGraphics {
 }
 
 function Shortcut-TrayIcons {
-    Create-Shortcut -path "$desktop\Tray Icons Menu (Legacy).lnk" -target "C:\Windows\explorer.exe" -arguments "shell:::{05d7b0f4-2121-4eff-bf6b-ed3f69b894d9}\SystemIcons" -name "Tray Icons"
+    Create-Shortcut -path "$desktop\Tray Icons Menu (Legacy).lnk" -target "C:\Windows\explorer.exe" -arguments "$trayIconsShellKey" -name "Tray Icons"
 }
 
 function Create-AllShortcuts {

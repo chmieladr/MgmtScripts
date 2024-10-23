@@ -1,6 +1,6 @@
 #!/bin/bash
+# Script by Adrian Chmiel (https://github.com/chmieladr)
 
-# Script by Adrian Chmiel (chmieladr)
 # Based on the following thread:
 # https://www.reddit.com/r/linux_gaming/comments/or1g40/changing_mouse_debounce_time_on_arch_linux/
 

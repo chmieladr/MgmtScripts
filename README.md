@@ -9,7 +9,7 @@ My collection of simple system management scripts for particular shells. Current
 ### My testing environment
 * Linux openSUSE Leap 15.6 (`/bin/bash`)
 * ArchLinux (`/bin/sh`)
-* Microsoft Windows 11 **23H2**
+* Microsoft Windows 11 **23H2** (PowerShell)
 
 ### PowerShell execution policy
 PowerShell normally doesn't allow you to run scripts downloaded from the Internet to protect you from malicious actions! Before executing any of the scripts you'll have to change the execution policy for your current PowerShell process using the following command:

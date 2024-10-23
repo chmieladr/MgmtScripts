@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script by Adrian Chmiel (chmieladr)
+# Script by Adrian Chmiel (https://github.com/chmieladr)
 
 # Kills the Plasma shell and starts it over again
 kquitapp5 plasmashell || killall plasmashell && kstart5 plasmashell

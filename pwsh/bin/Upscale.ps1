@@ -1,5 +1,5 @@
 #!/usr/bin/pwsh
-# Script made by Adrian Chmiel (chmieladr)
+# Script made by Adrian Chmiel (https://github.com/chmieladr)
 # Upscales all the provided videos to 3840x2160 resolution
 
 # Check if the user provided any input files

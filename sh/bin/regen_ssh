@@ -1,5 +1,5 @@
 #!/bin/sh
-# Script by Adrian Chmiel (chmieladr)
+# Script by Adrian Chmiel (https://github.com/chmieladr)
 
 # Remove all the exiting keys
 sudo rm /etc/ssh/ssh_host_*

@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script by Adrian Chmiel (chmieladr)
+# Script by Adrian Chmiel (https://github.com/chmieladr)
 
 # This script is mainly adjusted to openSUSE Leap distro and assumes that:
 # - you mainly use the Zypper package manager

@@ -1,5 +1,5 @@
 #!/usr/bin/pwsh
-# Script made by Adrian Chmiel (chmieladr)
+# Script made by Adrian Chmiel (https://github.com/chmieladr)
 # Unblocks all of the downloaded PowerShell scripts
 
 # Run only once!

@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script by Adrian Chmiel (chmieladr)
+# Script by Adrian Chmiel (https://github.com/chmieladr)
 # Fixes Brave browser when it's unable to launch
 
 # Locate Brave files

@@ -1,4 +1,4 @@
-# Script made by Adrian Chmiel (chmieladr)
+# Script made by Adrian Chmiel (https://github.com/chmieladr)
 # Lets you easily uninstall unnecessary preinstalled Windows 11 apps.
 
 # Elevated privileges check

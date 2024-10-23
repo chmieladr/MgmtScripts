@@ -1,5 +1,5 @@
 #!/bin/sh
-# Script by Adrian Chmiel (chmieladr)
+# Script by Adrian Chmiel (https://github.com/chmieladr)
 # Adds or removes an IPv4 address to defined interface
 
 # Define the interface here

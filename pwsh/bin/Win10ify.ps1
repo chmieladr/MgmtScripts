@@ -1,4 +1,5 @@
-# Script made by Adrian Chmiel (chmieladr)
+# Script made by Adrian Chmiel (https://github.com/chmieladr)
+
 # Features a couple tweaks restoring Windows 10 features on Windows 11
 # using only the registry (no third-party tools required)
 
@@ -277,7 +278,7 @@ function Introduction {
     Write-Host ""
     Write-Host ("Windows 10 ribbon Explorer UI (currently enabled: " + (Test-RibbonExplorer) + ")")
     Write-Host "Note: Old UI doesn't support multiple tabs"
-    Write-Host "  -B -> Enable | -b -> Disable"
+    Write-Host "  -R -> Enable | -r -> Disable"
     Write-Host ""
     Write-Host ("Small taskbar icons (currently enabled: " + (Test-SmallIcons) + ")")
     Write-Host "Note: Works only with Windows 10 taskbar enabled"

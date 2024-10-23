@@ -1,5 +1,5 @@
 #!/bin/sh
-# Script by Adrian Chmiel (chmieladr)
+# Script by Adrian Chmiel (https://github.com/chmieladr)
 
 # Remove the IPv6 addresses globally
 sudo ip -6 addr flush scope all

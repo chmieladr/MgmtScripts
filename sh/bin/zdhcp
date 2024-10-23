@@ -1,5 +1,5 @@
 #!/bin/sh
-# Script by Adrian Chmiel (chmieladr)
+# Script by Adrian Chmiel (https://github.com/chmieladr)
 
 # Overcomplicated script to capture DHCP traffic
 # and print exactly 4 different characteristic packets
