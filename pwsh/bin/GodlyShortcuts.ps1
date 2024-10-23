@@ -45,13 +45,18 @@ function Shortcut-AllApps {
 }
 
 function Shortcut-AdvancedGraphics {
-    Create-Shortcut -path "$desktop\Advanced Graphics Settings.lnk" -target "ms-settings:display-advancedgraphics" -name "Advanced Graphics"
+    Create-Shortcut -path "$desktop\Advanced Graphics Settings.url" -target "ms-settings:display-advancedgraphics" -name "Advanced Graphics" 2>$null
+}
+
+function Shortcut-TrayIcons {
+    Create-Shortcut -path "$desktop\Tray Icons Menu (Legacy).lnk" -target "C:\Windows\explorer.exe" -arguments "shell:::{05d7b0f4-2121-4eff-bf6b-ed3f69b894d9}\SystemIcons" -name "Tray Icons"
 }
 
 function Create-AllShortcuts {
     Shortcut-GodMode
     Shortcut-AllApps
     Shortcut-AdvancedGraphics
+    Shortcut-TrayIcons
     Write-Host "All available shortcuts have been created on the desktop!"
 }
 
@@ -64,6 +69,8 @@ function Introduction {
     Write-Host "-god -> Create a shortcut to God Mode"
     Write-Host "-app -> Create a shortcut to All Applications"
     Write-Host "-gpu -> Create a shortcut to Advanced Graphics Menu"
+    Write-Host "-ico -> Create a shortcut to Tray Icons Menu (Legacy)"
+    Write-Host ""
     Write-Host "-all -> Create all shortcuts"
     Write-Host ""
     Write-Host "Note: Multiple arguments in one go are allowed!"
